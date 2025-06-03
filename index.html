@@ -24,16 +24,6 @@
         --transition: all 0.3s ease;
       }
 
-      [data-theme="dark"] {
-        --primary-color: #4895ef;
-        --secondary-color: #4361ee;
-        --accent-color: #3f37c9;
-        --text-color: #f8f9fa;
-        --bg-color: #121212;
-        --card-color: #1e1e1e;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      }
-
       * {
         margin: 0;
         padding: 0;
@@ -46,72 +36,6 @@
         color: var(--text-color);
         transition: var(--transition);
         line-height: 1.6;
-      }
-
-      /* Theme Toggle */
-      .theme-switch-wrapper {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-      }
-
-      #toggle-icon {
-        margin-right: 10px;
-        font-size: 1.2rem;
-      }
-
-      .theme-switch {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 30px;
-      }
-
-      .theme-switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
-
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        transition: 0.4s;
-      }
-
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 22px;
-        width: 22px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        transition: 0.4s;
-      }
-
-      input:checked + .slider {
-        background-color: var(--primary-color);
-      }
-
-      input:checked + .slider:before {
-        transform: translateX(30px);
-      }
-
-      .slider.round {
-        border-radius: 34px;
-      }
-
-      .slider.round:before {
-        border-radius: 50%;
       }
 
       /* Navigation */
@@ -448,11 +372,6 @@
         transition: width 1.5s ease-in-out;
       }
 
-      /* Dark mode adjustment */
-      [data-theme="dark"] .skill-bar {
-        background: #333;
-      }
-
       /* Contact Section */
       .contact-container {
         display: grid;
@@ -612,17 +531,6 @@
     </style>
   </head>
   <body>
-    <!-- Dark Mode Toggle -->
-    <div class="theme-switch-wrapper">
-      <span id="toggle-icon">
-        <i class="fas fa-sun"></i>
-      </span>
-      <label class="theme-switch">
-        <input type="checkbox" />
-        <div class="slider round"></div>
-      </label>
-    </div>
-
     <!-- Navigation -->
     <nav id="nav">
       <a href="#home">HOME</a>
@@ -944,36 +852,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Theme toggle functionality
-        const toggleSwitch = document.querySelector(
-          '.theme-switch input[type="checkbox"]'
-        );
-        const currentTheme = localStorage.getItem("theme");
-        const icon = document.getElementById("toggle-icon");
-
-        if (currentTheme) {
-          document.documentElement.setAttribute("data-theme", currentTheme);
-
-          if (currentTheme === "dark") {
-            toggleSwitch.checked = true;
-            icon.innerHTML = '<i class="fas fa-moon"></i>';
-          }
-        }
-
-        function switchTheme(e) {
-          if (e.target.checked) {
-            document.documentElement.setAttribute("data-theme", "dark");
-            localStorage.setItem("theme", "dark");
-            icon.innerHTML = '<i class="fas fa-moon"></i>';
-          } else {
-            document.documentElement.setAttribute("data-theme", "light");
-            localStorage.setItem("theme", "light");
-            icon.innerHTML = '<i class="fas fa-sun"></i>';
-          }
-        }
-
-        toggleSwitch.addEventListener("change", switchTheme, false);
-
         // Smooth scrolling for navigation
         document.querySelectorAll("nav a").forEach((anchor) => {
           anchor.addEventListener("click", function (e) {
