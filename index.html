@@ -3,24 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mayur Patil | Data Analyst</title>
+    <title>Mayur Patil - Data Analyst Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Mayur Patil, a skilled Data Analyst specializing in data analysis, visualization, and business intelligence."
+    />
+    <meta
+      name="keywords"
+      content="data analyst, portfolio, Mayur Patil, Power BI, Python, SQL, dashboard development"
+    />
+    <meta name="author" content="Mayur Patil" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@300;600&display=swap"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
     <style>
       :root {
-        --primary-color: #4361ee;
-        --secondary-color: #3f37c9;
-        --accent-color: #4895ef;
-        --text-color: #2b2d42;
-        --bg-color: #f8f9fa;
-        --card-color: #ffffff;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --primary-color: #0055a4; /* Professional blue */
+        --secondary-color: #003087; /* Darker blue */
+        --accent-color: #00a3e0; /* Bright cyan */
+        --text-color: #1a2526; /* Dark gray */
+        --bg-color: #f9fafb; /* Light gray background */
+        --card-color: #ffffff; /* White cards */
+        --shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
         --transition: all 0.3s ease;
       }
 
@@ -28,14 +38,13 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Inter", "Poppins", sans-serif;
       }
 
       body {
         background-color: var(--bg-color);
         color: var(--text-color);
-        transition: var(--transition);
-        line-height: 1.6;
+        line-height: 1.8;
       }
 
       /* Navigation */
@@ -45,23 +54,30 @@
         width: 100%;
         background-color: var(--card-color);
         box-shadow: var(--shadow);
-        z-index: 99;
+        z-index: 999;
+        padding: 1.5rem 0;
+        transition: var(--transition);
+      }
+
+      .nav-links {
         display: flex;
         justify-content: center;
-        padding: 1rem 0;
-        transition: var(--transition);
+        align-items: center;
       }
 
       nav a {
         color: var(--text-color);
         text-decoration: none;
-        margin: 0 1.5rem;
-        font-weight: 600;
+        margin: 0 2rem;
+        font-weight: 500;
+        font-size: 1.1rem;
         transition: var(--transition);
         position: relative;
+        padding-bottom: 5px;
       }
 
-      nav a:hover {
+      nav a:hover,
+      nav a:focus {
         color: var(--primary-color);
       }
 
@@ -71,26 +87,61 @@
         width: 0;
         height: 2px;
         background: var(--primary-color);
-        bottom: -5px;
-        left: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
         transition: var(--transition);
       }
 
-      nav a:hover:after {
+      nav a:hover:after,
+      nav a:focus:after {
+        width: 50%;
+      }
+
+      /* Hamburger Menu */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 32px;
+        height: 24px;
+        cursor: pointer;
+        margin: 0 24px;
+        z-index: 1000;
+      }
+
+      .hamburger span {
         width: 100%;
+        height: 3px;
+        background-color: var(--text-color);
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
       }
 
       /* Sections */
       section {
         min-height: 100vh;
-        padding: 6rem 2rem;
-        max-width: 1200px;
+        padding: 8rem 2rem;
+        max-width: 1280px;
         margin: 0 auto;
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 2.5rem;
         text-align: center;
         color: var(--primary-color);
         position: relative;
@@ -99,10 +150,10 @@
       h1:after {
         content: "";
         position: absolute;
-        width: 80px;
+        width: 100px;
         height: 4px;
         background: var(--accent-color);
-        bottom: -10px;
+        bottom: -15px;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 2px;
@@ -119,108 +170,143 @@
           var(--primary-color),
           var(--secondary-color)
         );
-        color: white;
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        padding-bottom: 10rem;
+        color: #ffffff;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        padding-bottom: 12rem;
       }
 
       .title-group h1 {
-        font-size: 4rem;
-        margin-bottom: 1rem;
-        color: white;
+        font-size: 5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
       }
 
       .title-group h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-weight: 300;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
+        opacity: 0.9;
       }
 
       .social-icons {
         display: flex;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 2rem;
       }
 
       .social-icons a {
-        color: white;
-        font-size: 1.5rem;
+        color: #ffffff;
+        font-size: 1.8rem;
         transition: var(--transition);
       }
 
-      .social-icons a:hover {
+      .social-icons a:hover,
+      .social-icons a:focus {
         color: var(--accent-color);
-        transform: translateY(-3px);
+        transform: translateY(-5px);
       }
 
       /* About Section */
       .about-container {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        gap: 3rem;
+        gap: 4rem;
         align-items: center;
       }
 
       .profile-image {
         width: 100%;
-        border-radius: 10px;
+        max-width: 400px;
+        border-radius: 12px;
         box-shadow: var(--shadow);
         transition: var(--transition);
       }
 
       .profile-image:hover {
-        transform: scale(1.02);
+        transform: scale(1.03);
+      }
+
+      .text-container p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+        opacity: 0.95;
       }
 
       .text-container ul {
         list-style: none;
-        margin: 1.5rem 0;
+        margin: 2rem 0;
       }
 
       .text-container li {
-        margin-bottom: 0.8rem;
+        margin-bottom: 1rem;
         display: flex;
         align-items: center;
+        font-size: 1.1rem;
+        font-weight: 500;
       }
 
       .text-container i {
-        margin-right: 10px;
+        margin-right: 12px;
         color: var(--accent-color);
+        font-size: 1.2rem;
       }
 
       .resume-btn {
-        display: inline-block;
-        background: var(--primary-color);
-        color: white;
-        padding: 0.8rem 1.5rem;
-        border-radius: 5px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        color: #ffffff;
+        padding: 1rem 2rem;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: 600;
+        font-size: 1.1rem;
         transition: var(--transition);
-        margin-top: 1rem;
+        margin-top: 2rem;
+        box-shadow: var(--shadow);
       }
 
-      .resume-btn:hover {
-        background: var(--secondary-color);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      .resume-btn:hover,
+      .resume-btn:focus {
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color),
+          var(--primary-color)
+        );
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
       }
 
       /* Projects Section */
+      #projects {
+        background: linear-gradient(
+          135deg,
+          rgba(243, 244, 246, 0.5) 0%,
+          rgba(209, 213, 219, 0.5) 100%
+        );
+      }
+
       .project-grid {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-        max-width: 1200px;
+        gap: 3rem;
+        max-width: 1280px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 24px;
       }
 
       .project-row {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2rem;
+        gap: 3rem;
       }
 
       .centered-row {
@@ -228,146 +314,171 @@
       }
 
       .project-card {
-        flex: 1 1 300px;
-        max-width: 350px;
+        flex: 1 1 320px;
+        max-width: 380px;
         background: var(--card-color);
-        border-radius: 10px;
+        border-radius: 12px;
         overflow: hidden;
         box-shadow: var(--shadow);
         transition: var(--transition);
       }
 
-      .project-card:hover {
-        transform: translateY(-10px);
+      .project-card:hover,
+      .project-card:focus-within {
+        transform: translateY(-12px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
       }
 
       .project-card img {
         width: 100%;
-        height: 200px;
+        height: 220px;
         object-fit: cover;
+        border-bottom: 2px solid var(--accent-color);
       }
 
       .project-info {
-        padding: 1.5rem;
+        padding: 2rem;
       }
 
       .project-info h3 {
-        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
         color: var(--primary-color);
+        font-weight: 600;
       }
 
       .project-info p {
-        margin-bottom: 1rem;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
         color: var(--text-color);
         opacity: 0.9;
       }
 
-      .project-links {
-        display: flex;
-        gap: 1rem;
-      }
-
       .project-links a {
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        color: var(--accent-color);
+        gap: 8px;
+        color: var(--primary-color);
         text-decoration: none;
-        font-weight: 600;
+        font-weight: 500;
+        font-size: 1rem;
         transition: var(--transition);
       }
 
-      .project-links a:hover {
-        color: var(--primary-color);
-      }
-
-      .project-links i {
-        margin-right: 5px;
+      .project-links a:hover,
+      .project-links a:focus {
+        color: var(--accent-color);
+        text-decoration: underline;
       }
 
       /* View More Projects Button */
       .view-more-container {
         text-align: center;
-        margin-top: 3rem;
+        margin-top: 4rem;
       }
 
       .view-more-btn {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        padding: 0.8rem 1.8rem;
-        background: var(--primary-color);
-        color: white;
+        gap: 10px;
+        padding: 1rem 2.5rem;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        color: #ffffff;
         border-radius: 50px;
         text-decoration: none;
         font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        font-size: 1.1rem;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
       }
 
-      .view-more-btn:hover {
-        background: var(--secondary-color);
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+      .view-more-btn:hover,
+      .view-more-btn:focus {
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color),
+          var(--primary-color)
+        );
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
       }
 
       .view-more-btn i {
         transition: transform 0.3s ease;
       }
 
-      .view-more-btn:hover i {
-        transform: translateX(3px);
+      .view-more-btn:hover i,
+      .view-more-btn:focus i {
+        transform: translateX(5px);
       }
 
       /* Skills Section Styles */
       .skills-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
       }
 
       .skill-category {
         background: var(--card-color);
-        padding: 1.5rem;
-        border-radius: 10px;
+        padding: 2rem;
+        border-radius: 12px;
         box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .skill-category:hover {
+        transform: translateY(-8px);
       }
 
       .skill-category h3 {
-        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
         display: flex;
         align-items: center;
         color: var(--primary-color);
+        font-weight: 600;
       }
 
       .skill-category i {
-        margin-right: 10px;
-        font-size: 1.2rem;
+        margin-right: 12px;
+        font-size: 1.4rem;
+        color: var(--accent-color);
       }
 
       .skill-item {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
       }
 
       .skill-info {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+        font-size: 1.1rem;
       }
 
       .skill-bar {
-        height: 10px;
-        background: #e0e0e0;
-        border-radius: 5px;
+        height: 12px;
+        background: #e5e7eb;
+        border-radius: 6px;
         overflow: hidden;
         position: relative;
       }
 
       .skill-progress {
         height: 100%;
-        background: var(--primary-color);
-        border-radius: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 6px;
         width: 0;
         transition: width 1.5s ease-in-out;
       }
@@ -376,111 +487,177 @@
       .contact-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        margin-top: 3rem;
+        gap: 4rem;
+        margin-top: 4rem;
       }
 
       .contact-form {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
       }
 
       .contact-form input,
       .contact-form textarea {
-        padding: 0.8rem;
-        border: 1px solid #ddd;
-        border-radius: 5px;
+        padding: 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
         background: var(--card-color);
         color: var(--text-color);
+        font-size: 1rem;
         transition: var(--transition);
       }
 
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(0, 85, 164, 0.1);
+      }
+
       .contact-form textarea {
-        min-height: 150px;
+        min-height: 180px;
         resize: vertical;
       }
 
       .contact-form button {
-        background: var(--primary-color);
-        color: white;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        color: #ffffff;
         border: none;
-        padding: 0.8rem;
-        border-radius: 5px;
+        padding: 1rem;
+        border-radius: 8px;
         cursor: pointer;
         font-weight: 600;
+        font-size: 1.1rem;
         transition: var(--transition);
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 5px;
+        gap: 8px;
       }
 
-      .contact-form button:hover {
-        background: var(--secondary-color);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      .contact-form button:hover,
+      .contact-form button:focus {
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color),
+          var(--primary-color)
+        );
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
       }
 
       .contact-info {
         background: var(--card-color);
-        padding: 1.5rem;
-        border-radius: 10px;
+        padding: 2rem;
+        border-radius: 12px;
         box-shadow: var(--shadow);
       }
 
       .contact-info h3 {
-        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
         color: var(--primary-color);
+        font-weight: 600;
       }
 
       .contact-info p {
-        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
         display: flex;
         align-items: center;
       }
 
       .contact-info i {
-        margin-right: 10px;
+        margin-right: 12px;
         color: var(--accent-color);
-        width: 20px;
+        width: 24px;
         text-align: center;
+        font-size: 1.2rem;
       }
 
       .contact-social {
         display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
       }
 
       .contact-social a {
         color: var(--text-color);
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         transition: var(--transition);
       }
 
-      .contact-social a:hover {
+      .contact-social a:hover,
+      .contact-social a:focus {
         color: var(--primary-color);
-        transform: translateY(-3px);
+        transform: translateY(-5px);
       }
 
       /* Footer */
       footer {
-        text-align: center;
-        padding: 2rem;
         background: var(--card-color);
         color: var(--text-color);
+        padding: 4rem 2rem;
+        text-align: center;
+        box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .footer-content {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .footer-content p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      .footer-social a {
+        color: var(--text-color);
+        font-size: 1.8rem;
+        transition: var(--transition);
+      }
+
+      .footer-social a:hover,
+      .footer-social a:focus {
+        color: var(--primary-color);
+        transform: translateY(-5px);
       }
 
       /* Animations */
       @keyframes fadeIn {
         from {
           opacity: 0;
-          transform: translateY(20px);
+          transform: translateY(30px);
         }
         to {
           opacity: 1;
           transform: translateY(0);
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
         }
       }
 
@@ -495,13 +672,42 @@
           grid-template-columns: 1fr;
         }
 
-        nav {
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          display: none;
           flex-direction: column;
-          padding: 1rem;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 280px;
+          height: 100vh;
+          background-color: var(--card-color);
+          padding: 5rem 2rem;
+          box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+          transform: translateX(-100%);
+          transition: transform 0.4s ease;
+        }
+
+        .nav-links.active {
+          display: flex;
+          transform: translateX(0);
+          animation: slideIn 0.4s ease forwards;
         }
 
         nav a {
-          margin: 0.5rem 0;
+          margin: 1rem 0;
+          text-align: left;
+          padding: 0.8rem 1rem;
+          font-size: 1.2rem;
+          border-radius: 6px;
+        }
+
+        nav a:hover,
+        nav a:focus {
+          background: var(--bg-color);
         }
 
         .project-grid {
@@ -509,51 +715,71 @@
         }
 
         section {
-          padding: 4rem 1rem;
+          padding: 6rem 1.5rem;
         }
 
         .title-group h1 {
-          font-size: 2.5rem;
+          font-size: 3.5rem;
+        }
+
+        .title-group h2 {
+          font-size: 1.8rem;
+        }
+
+        h1 {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .title-group h1 {
+          font-size: 2.8rem;
         }
 
         .title-group h2 {
           font-size: 1.5rem;
         }
-      }
 
-      #projects {
-        background: linear-gradient(
-          135deg,
-          rgba(44, 62, 80, 0.05) 0%,
-          rgba(52, 152, 219, 0.05) 100%
-        );
+        .project-card {
+          max-width: 100%;
+        }
       }
     </style>
   </head>
   <body>
     <!-- Navigation -->
-    <nav id="nav">
-      <a href="#home">HOME</a>
-      <a href="#about">ABOUT</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="#skills">SKILLS</a>
-      <a href="#contact">CONTACT</a>
+    <nav role="navigation">
+      <div
+        class="hamburger"
+        aria-label="Toggle menu"
+        role="button"
+        tabindex="0"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#home" aria-current="page">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#contact">CONTACT</a>
+      </div>
     </nav>
 
     <!-- Home Section -->
-    <section id="home">
+    <section id="home" aria-labelledby="home-heading">
       <div class="title-group">
-        <h1 class="animate__animated animate__fadeIn">Mayur Patil</h1>
-        <h2 class="animate__animated animate__fadeIn animate__delay-1s">
-          Data Analyst
-        </h2>
-        <div
-          class="social-icons animate__animated animate__fadeIn animate__delay-2s"
-        >
-          <a href="https://www.linkedin.com/in/mayurpatil1130" target="_blank"
+        <h1 id="home-heading">Mayur Patil</h1>
+        <h2>Data Analyst</h2>
+        <div class="social-icons">
+          <a
+            href="https://www.linkedin.com/in/mayurpatil1130"
+            aria-label="LinkedIn profile"
             ><i class="fab fa-linkedin"></i
           ></a>
-          <a href="https://github.com/Mayurpatil05" target="_blank"
+          <a href="https://github.com/Mayurpatil05" aria-label="GitHub profile"
             ><i class="fab fa-github"></i
           ></a>
         </div>
@@ -561,16 +787,10 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
-      <h1>About Me</h1>
+    <section id="about" aria-labelledby="about-heading">
+      <h1 id="about-heading">About Me</h1>
       <div class="about-container">
-        <div class="image-container">
-          <img
-            src="./M Mirror.jpeg"
-            alt="Mayur Patil"
-            class="profile-image"
-          />
-        </div>
+        <img src="./M Mirror.jpeg" alt="Profile" class="profile-image" />
         <div class="text-container">
           <p>
             I am a passionate data enthusiast with strong foundational skills in
@@ -579,12 +799,12 @@
             data into meaningful insights. My key competencies include:
           </p>
           <ul>
-            <li><i class="fas fa-broom"></i> Data Cleaning & Preparation</li>
-            <li><i class="fas fa-database"></i> SQL Queries</li>
             <li>
-              <i class="fas fa-project-diagram"></i> Dashboard Development
+              <i class="fas fa-check-circle"></i> Data Cleaning & Preparation
             </li>
-            <li><i class="fas fa-lightbulb"></i> Business Intelligence</li>
+            <li><i class="fas fa-check-circle"></i> SQL Queries</li>
+            <li><i class="fas fa-check-circle"></i> Dashboard Development</li>
+            <li><i class="fas fa-check-circle"></i> Business Intelligence</li>
           </ul>
           <p>
             I combine my technical training with a keen business mindset to
@@ -595,20 +815,20 @@
           <a
             href="https://drive.google.com/file/d/1DsBLU8BLFNcHFC4navLfbFKYGKW9Ds0A/view?usp=sharing"
             class="resume-btn"
-            >Download Resume</a
+            aria-label="Download resume"
+            ><i class="fas fa-download"></i> Download Resume</a
           >
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
-      <h1>Featured Projects</h1>
+    <section id="projects" aria-labelledby="projects-heading">
+      <h1 id="projects-heading">Featured Projects</h1>
       <div class="project-grid">
-        <!-- First Row - 3 cards -->
         <div class="project-row">
-          <div class="project-card" data-tilt>
-            <img src="./Zomato.png" alt="Sales Dashboard" />
+          <div class="project-card" tabindex="0">
+            <img src="./Zomato.png" alt="Zomato Restaurant Analysis" />
             <div class="project-info">
               <h3>Zomato Restaurant Analysis</h3>
               <p>
@@ -617,14 +837,16 @@
               </p>
               <p><strong>Tools:</strong> Python, Jupyter Notebook</p>
               <div class="project-links">
-                <a href="https://github.com/Mayurpatil05/Zomato-Data-Analysis"
-                  ><i class="fab fa-github"></i> View Project</a
+                <a
+                  href="https://github.com/Mayurpatil05/Zomato-Data-Analysis"
+                  aria-label="View Zomato project"
+                  ><i class="fas fa-external-link-alt"></i> View Project</a
                 >
               </div>
             </div>
           </div>
 
-          <div class="project-card" data-tilt>
+          <div class="project-card" tabindex="0">
             <img src="./Book Store.png" alt="Book Store Analysis" />
             <div class="project-info">
               <h3>Book Store Analysis</h3>
@@ -634,19 +856,24 @@
               </p>
               <p><strong>Tools:</strong> PostgreSQL, pgAdmin</p>
               <div class="project-links">
-                <a href="https://github.com/Mayurpatil05/bookstore-sql-analysis"
-                  ><i class="fab fa-github"></i> View Project</a
+                <a
+                  href="https://github.com/Mayurpatil05/bookstore-sql-analysis"
+                  aria-label="View Book Store project"
+                  ><i class="fas fa-external-link-alt"></i> View Project</a
                 >
               </div>
             </div>
           </div>
 
-          <div class="project-card" data-tilt>
-            <img src="./Road Dashboard.png" alt="COVID Analysis" />
+          <div class="project-card" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+              alt="Road Accident Analysis"
+            />
             <div class="project-info">
               <h3>Road Accident Analysis</h3>
               <p>
-                Created a Excel dashboard to analyze UK road accidents
+                Created an Excel dashboard to analyze UK road accidents
                 (2021-2022) by casualties, vehicle types, road conditions, and
                 trends.
               </p>
@@ -654,17 +881,20 @@
               <div class="project-links">
                 <a
                   href="https://github.com/Mayurpatil05/Road_Accident_Dashboard-"
-                  ><i class="fab fa-github"></i> View Project</a
+                  aria-label="View Road Accident project"
+                  ><i class="fas fa-external-link-alt"></i> View Project</a
                 >
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Second Row - 2 centered cards -->
         <div class="project-row centered-row">
-          <div class="project-card" data-tilt>
-            <img src="./Superstore.jpeg" alt="Project 4" />
+          <div class="project-card" tabindex="0">
+            <img
+              src="./Superstore.jpeg"
+              alt="Superstore Sales Dashboard"
+            />
             <div class="project-info">
               <h3>Superstore Sales Dashboard</h3>
               <p>
@@ -676,14 +906,18 @@
               <div class="project-links">
                 <a
                   href="https://github.com/Mayurpatil05/SuperStore_Sales_Dashboard"
-                  ><i class="fab fa-github"></i> View Project</a
+                  aria-label="View Superstore Sales project"
+                  ><i class="fas fa-external-link-alt"></i> View Project</a
                 >
               </div>
             </div>
           </div>
 
-          <div class="project-card" data-tilt>
-            <img src="./Credit Card.png" alt="Project 5" />
+          <div class="project-card" tabindex="0">
+            <img
+              src="./Credit Card.png"
+              alt="Credit Card Financial Report Dashboard"
+            />
             <div class="project-info">
               <h3>Credit Card Financial Report Dashboard</h3>
               <p>
@@ -694,7 +928,8 @@
               <div class="project-links">
                 <a
                   href="https://github.com/Mayurpatil05/Credit_Card_Financial_Report_Dashboard-"
-                  ><i class="fab fa-github"></i> View Project</a
+                  aria-label="View Credit Card project"
+                  ><i class="fas fa-external-link-alt"></i> View Project</a
                 >
               </div>
             </div>
@@ -702,114 +937,172 @@
         </div>
       </div>
 
-      <!-- View More Button -->
       <div class="view-more-container">
         <a
           href="https://github.com/Mayurpatil05"
-          target="_blank"
           class="view-more-btn"
+          aria-label="View more projects"
+          ><i class="fas fa-arrow-right"></i> View More Projects</a
         >
-          View More Projects <i class="fas fa-arrow-right"></i>
-        </a>
       </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
-      <h1>Technical Skills</h1>
+    <section id="skills" aria-labelledby="skills-heading">
+      <h1 id="skills-heading">Technical Skills</h1>
       <div class="skills-container">
-        <!-- Programming Skills -->
         <div class="skill-category">
           <h3><i class="fas fa-code"></i> Programming</h3>
           <div class="skill-item">
             <div class="skill-info">
               <span>Python</span>
-              <span>80%</span>
+              <span></span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-level="80"></div>
+              <div
+                class="skill-progress"
+                data-level="80"
+                role="progressbar"
+                aria-valuenow="80"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-info">
               <span>SQL</span>
-              <span>90%</span>
+              <span></span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-level="90"></div>
+              <div
+                class="skill-progress"
+                data-level="90"
+                role="progressbar"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-info">
               <span>R</span>
-              <span>65%</span>
+              <span></span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-level="65"></div>
+              <div
+                class="skill-progress"
+                data-level="65"
+                role="progressbar"
+                aria-valuenow="65"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
         </div>
 
-        <!-- Visualization Skills -->
         <div class="skill-category">
-          <h3><i class="fas fa-chart-pie"></i> Visualization</h3>
+          <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
           <div class="skill-item">
             <div class="skill-info">
               <span>Power BI</span>
-              <span>85%</span>
+              <span></span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-level="85"></div>
+              <div
+                class="skill-progress"
+                data-level="85"
+                role="progressbar"
+                aria-valuenow="85"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-info">
               <span>Matplotlib/Seaborn</span>
-              <span>80%</span>
+              <span></span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-level="80"></div>
+              <div
+                class="skill-progress"
+                data-level="80"
+                role="progressbar"
+                aria-valuenow="80"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-info">
               <span>Tableau</span>
-              <span>60%</span>
+              <span></span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-level="60"></div>
+              <div
+                class="skill-progress"
+                data-level="60"
+                role="progressbar"
+                aria-valuenow="60"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
         </div>
 
-        <!-- Data Tools -->
         <div class="skill-category">
-          <h3><i class="fas fa-server"></i> Data Wrangling & Tools</h3>
+          <h3><i class="fas fa-tools"></i> Data Tools</h3>
           <div class="skill-item">
             <div class="skill-info">
               <span>Excel</span>
-              <span>90%</span>
+              <span></span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-level="90"></div>
+              <div
+                class="skill-progress"
+                data-level="90"
+                role="progressbar"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-info">
               <span>ETL</span>
-              <span>70%</span>
+              <span></span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-level="70"></div>
+              <div
+                class="skill-progress"
+                data-level="70"
+                role="progressbar"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-info">
               <span>Data Cleaning</span>
-              <span>85%</span>
+              <span></span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-level="85"></div>
+              <div
+                class="skill-progress"
+                data-level="85"
+                role="progressbar"
+                aria-valuenow="85"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
           </div>
         </div>
@@ -817,27 +1110,56 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-      <h1>Get In Touch</h1>
+    <section id="contact" aria-labelledby="contact-heading">
+      <h1 id="contact-heading">Get In Touch</h1>
       <div class="contact-container">
-        <form class="contact-form" id="whatsappForm">
-          <input type="text" id="name" placeholder="Your Name" required />
-          <input type="email" id="email" placeholder="Your Email" required />
-          <textarea id="message" placeholder="Your Message" required></textarea>
-          <button type="button" onclick="sendWhatsAppMessage()">
-            Send Message <i class="fas fa-paper-plane"></i>
+        <form class="contact-form" role="form" aria-label="Contact form">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            aria-label="Name"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            aria-label="Email"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+            aria-label="Message"
+          ></textarea>
+          <button type="submit" aria-label="Send message">
+            <i class="fas fa-paper-plane"></i> Send Message
           </button>
         </form>
         <div class="contact-info">
           <h3>Contact Information</h3>
-          <p><i class="fas fa-envelope"></i> mayurpatil11801@gmail.com</p>
-          <p><i class="fas fa-phone"></i> +91 9975201130</p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:mayurpatil11801@gmail.com"
+              >mayurpatil11801@gmail.com</a
+            >
+          </p>
+          <p>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+919975201130">+91 9975201130</a>
+          </p>
           <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</p>
           <div class="contact-social">
-            <a href="https://www.linkedin.com/in/mayurpatil1130"
+            <a
+              href="https://www.linkedin.com/in/mayurpatil1130"
+              aria-label="LinkedIn profile"
               ><i class="fab fa-linkedin"></i
             ></a>
-            <a href="https://github.com/Mayurpatil05"
+            <a
+              href="https://github.com/Mayurpatil05"
+              aria-label="GitHub profile"
               ><i class="fab fa-github"></i
             ></a>
           </div>
@@ -845,23 +1167,55 @@
       </div>
     </section>
 
-    <footer>
-      <p>© 2025 Mayur Patil | Data Analyst Portfolio</p>
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <p>© 2025 Mayur Patil | Data Analyst Portfolio</p>
+      </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Hamburger menu toggle
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        function toggleMenu() {
+          hamburger.classList.toggle("active");
+          navLinks.classList.toggle("active");
+          hamburger.setAttribute(
+            "aria-expanded",
+            hamburger.classList.contains("active")
+          );
+        }
+
+        hamburger.addEventListener("click", toggleMenu);
+        hamburger.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleMenu();
+          }
+        });
+
+        // Close menu when a nav link is clicked
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+            hamburger.setAttribute("aria-expanded", "false");
+          });
+        });
+
         // Smooth scrolling for navigation
         document.querySelectorAll("nav a").forEach((anchor) => {
           anchor.addEventListener("click", function (e) {
             e.preventDefault();
-
             const targetId = this.getAttribute("href");
             const targetElement = document.querySelector(targetId);
+            const navHeight = document.querySelector("nav").offsetHeight;
 
             window.scrollTo({
-              top: targetElement.offsetTop - 70,
+              top: targetElement.offsetTop - navHeight,
               behavior: "smooth",
             });
           });
@@ -870,14 +1224,13 @@
         // Animate skill bars when section is visible
         function animateSkillBars() {
           const skillBars = document.querySelectorAll(".skill-progress");
-
           skillBars.forEach((bar) => {
             const level = bar.getAttribute("data-level");
             bar.style.width = level + "%";
           });
         }
 
-        // Update your existing Intersection Observer callback
+        // Intersection Observer for animations
         const observer = new IntersectionObserver(
           (entries, observer) => {
             entries.forEach((entry) => {
@@ -890,48 +1243,69 @@
               }
             });
           },
-          { threshold: 0.1 }
+          { threshold: 0.2 }
         );
 
-        // Observe skills section
-        const skillsSection = document.getElementById("skills");
-        if (skillsSection) {
-          observer.observe(skillsSection);
-        }
-
-        // Observe all sections
         document.querySelectorAll("section").forEach((section) => {
           observer.observe(section);
         });
 
         // Initialize tilt effect on project cards
         VanillaTilt.init(document.querySelectorAll(".project-card"), {
-          max: 15,
-          speed: 400,
+          max: 10,
+          speed: 600,
           glare: true,
-          "max-glare": 0.2,
+          "max-glare": 0.3,
         });
-      });
 
-      function sendWhatsAppMessage() {
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
+        // Form submission handling
+        const contactForm = document.querySelector(".contact-form");
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = this.elements["name"].value.trim();
+            const email = this.elements["email"].value.trim();
+            const message = this.elements["message"].value.trim();
 
-        if (!name || !email || !message) {
-          alert("Please fill in all fields");
-          return;
+            // Validate inputs
+            if (!name || !email || !message) {
+              alert("Please fill out all required fields.");
+              return;
+            }
+
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+              alert("Please enter a valid email address.");
+              return;
+            }
+
+            // WhatsApp number
+            const whatsappNumber = "+919975201130"; // Number without '+' for WhatsApp API
+
+            // Format the message
+            const formattedMessage = `New message from portfolio website:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
+
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(formattedMessage);
+
+            // Construct WhatsApp URL
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`;
+
+            try {
+              // Open WhatsApp in a new tab
+              window.open(whatsappUrl, "_blank");
+              alert("Opening WhatsApp to send your message.");
+              this.reset();
+            } catch (error) {
+              console.error("Error opening WhatsApp:", error);
+              alert(
+                "Failed to open WhatsApp. Please try again or contact directly."
+              );
+            }
+          });
         }
-
-        const whatsappMessage = `New message from portfolio website:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
-        const encodedMessage = encodeURIComponent(whatsappMessage);
-        const whatsappUrl = `https://wa.me/919975201130?text=${encodedMessage}`;
-
-        window.open(whatsappUrl, "_blank");
-
-        // Optional: Clear the form after sending
-        document.getElementById("whatsappForm").reset();
-      }
+      });
     </script>
   </body>
 </html>
